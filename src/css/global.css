@@ -1,0 +1,840 @@
+/* ============================================================
+   HOTEL AURÉLYN — Estilos Globales
+   Variables, reinicio base y estilos de todos los componentes
+   ============================================================ */
+
+/* === Propiedades Personalizadas CSS (colores) === */
+:root {
+  /* Primario (dorado) */
+  --color-primario:                  #e6c364;
+  --color-primario-contenedor:       #c9a84c;
+  --color-primario-fijo:             #ffe08f;
+  --color-primario-fijo-dim:         #e6c364;
+  --color-sobre-primario:            #3d2e00;
+  --color-sobre-primario-fijo:       #241a00;
+  --color-sobre-primario-fijo-var:   #584400;
+  --color-primario-inverso:          #755b00;
+
+  /* Secundario */
+  --color-secundario:                    #bbc7da;
+  --color-secundario-contenedor:         #3e4a59;
+  --color-secundario-fijo:               #d7e3f7;
+  --color-secundario-fijo-dim:           #bbc7da;
+  --color-sobre-secundario:             #253140;
+  --color-sobre-secundario-contenedor:  #adb9cc;
+  --color-sobre-secundario-fijo:        #101c2a;
+  --color-sobre-secundario-fijo-var:    #3c4857;
+
+  /* Terciario */
+  --color-terciario:                   #cac6be;
+  --color-terciario-contenedor:        #aeaba3;
+  --color-terciario-fijo:              #e6e2d9;
+  --color-terciario-fijo-dim:          #cac6be;
+  --color-sobre-terciario:             #31302b;
+  --color-sobre-terciario-contenedor:  #414039;
+  --color-sobre-terciario-fijo:        #1c1c16;
+  --color-sobre-terciario-fijo-var:    #484740;
+
+  /* Fondo y Superficie */
+  --color-fondo:                        #101418;
+  --color-superficie:                   #101418;
+  --color-superficie-dim:               #101418;
+  --color-superficie-brillante:         #36393f;
+  --color-superficie-variante:          #32353a;
+  --color-superficie-contenedor-min:    #0b0e13;
+  --color-superficie-contenedor-bajo:   #191c21;
+  --color-superficie-contenedor:        #1d2025;
+  --color-superficie-contenedor-alto:   #272a2f;
+  --color-superficie-contenedor-max:    #32353a;
+  --color-tinte-superficie:             #e6c364;
+
+  /* Sobre Superficie */
+  --color-sobre-superficie:         #e1e2e9;
+  --color-sobre-superficie-var:     #d0c5b2;
+  --color-superficie-inversa:       #e1e2e9;
+  --color-sobre-superficie-inversa: #2e3036;
+
+  /* Contorno */
+  --color-contorno:         #99907e;
+  --color-contorno-variante: #4d4637;
+
+  /* Error */
+  --color-error:              #ffb4ab;
+  --color-error-contenedor:   #93000a;
+  --color-sobre-error:        #690005;
+  --color-sobre-error-contenedor: #ffdad6;
+
+  /* Misceláneos */
+  --color-gris-300: #cbd5e1;
+  --color-gris-500: #64748b;
+
+  /* Radio de borde */
+  --radio:      0.125rem;
+  --radio-lg:   0.25rem;
+  --radio-xl:   0.5rem;
+  --radio-full: 0.75rem;
+}
+
+/* === Reinicio Base === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Cuerpo === */
+.cuerpo-pagina {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-sobre-superficie);
+}
+
+/* === Símbolos de Material === */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+
+/* === Contenedor de Diseño === */
+.contenedor {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ============================================================
+   NAVEGACIÓN
+   ============================================================ */
+.nav-sitio {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(16, 20, 24, 0.7);
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .nav-sitio {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.nav-marca {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: var(--color-primario);
+}
+
+.nav-menu {
+  display: none;
+  gap: 3rem;
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+  }
+}
+
+.nav-enlace {
+  color: var(--color-gris-300);
+  text-decoration: none;
+  transition: color 500ms;
+}
+
+.nav-enlace:hover {
+  color: var(--color-primario);
+}
+
+.nav-enlace--activo {
+  color: var(--color-primario);
+  border-bottom: 1px solid rgba(230, 195, 100, 0.3);
+  padding-bottom: 0.25rem;
+}
+
+.btn-reservar {
+  background: linear-gradient(135deg, #e6c364 0%, #c9a84c 100%);
+  color: var(--color-sobre-primario);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radio-xl);
+  border: none;
+  cursor: pointer;
+  transition: opacity 500ms;
+}
+
+.btn-reservar:hover {
+  opacity: 0.9;
+}
+
+/* ============================================================
+   HERO (PORTADA)
+   ============================================================ */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.hero-bg-imagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  max-width: 56rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.hero-titulo {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.25rem;
+  letter-spacing: 0.3em;
+  color: var(--color-primario);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-titulo {
+    font-size: 4.5rem;
+  }
+}
+
+.hero-lema {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--color-sobre-superficie-var);
+  letter-spacing: 0.05em;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .hero-lema {
+    font-size: 1.5rem;
+  }
+}
+
+.hero-divisor-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-divisor {
+  height: 1px;
+  width: 6rem;
+  background-color: rgba(230, 195, 100, 0.4);
+}
+
+.indicador-scroll {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.etiqueta-scroll {
+  font-family: 'Noto Serif', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-primario);
+  text-shadow: 0 0 30px rgba(230, 195, 100, 0.6);
+}
+
+.linea-scroll {
+  width: 1px;
+  height: 3rem;
+  background: linear-gradient(to bottom, rgba(230, 195, 100, 0.6), transparent);
+}
+
+/* ============================================================
+   SECCIÓN HABITACIONES
+   ============================================================ */
+.seccion-habitaciones {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: var(--color-superficie);
+}
+
+@media (min-width: 768px) {
+  .seccion-habitaciones {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.encabezado-seccion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 6rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .encabezado-seccion {
+    flex-direction: row;
+  }
+}
+
+.encabezado-seccion-izquierda {
+  max-width: 42rem;
+}
+
+.etiqueta-seccion {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: var(--color-primario);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.titulo-seccion {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.25rem;
+  color: var(--color-sobre-superficie);
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .titulo-seccion {
+    font-size: 3.75rem;
+  }
+}
+
+.descripcion-seccion {
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-sobre-superficie-var);
+  max-width: 20rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.grilla-habitaciones {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .grilla-habitaciones {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* === Tarjeta de Habitación === */
+.tarjeta-habitacion {
+  background-color: var(--color-superficie-contenedor-bajo);
+  transition: background-color 500ms;
+  padding: 1rem;
+  border-radius: var(--radio-xl);
+}
+
+.tarjeta-habitacion:hover {
+  background-color: var(--color-superficie-contenedor-alto);
+}
+
+@media (min-width: 768px) {
+  .tarjeta-habitacion--destacada {
+    margin-top: -3rem;
+  }
+}
+
+.tarjeta-imagen-wrap {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radio-lg);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.tarjeta-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1000ms;
+}
+
+.tarjeta-habitacion:hover .tarjeta-imagen {
+  transform: scale(1.05);
+}
+
+.tarjeta-precio {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(16, 20, 24, 0.8);
+  backdrop-filter: blur(12px);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radio);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-sobre-superficie);
+}
+
+.tarjeta-nombre {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.5rem;
+  color: var(--color-sobre-superficie);
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-comodidades {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-sobre-superficie-var);
+}
+
+.tarjeta-icono {
+  font-size: 1.125rem;
+}
+
+.btn-ver-habitacion {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-primario);
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  padding-bottom: 0.25rem;
+  transition: border-color 300ms;
+}
+
+.btn-ver-habitacion:hover {
+  border-bottom-color: var(--color-primario);
+}
+
+/* ============================================================
+   SECCIÓN RESTAURANTE
+   ============================================================ */
+.seccion-restaurante {
+  position: relative;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+  overflow: hidden;
+}
+
+.restaurante-fondo-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.restaurante-fondo-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.restaurante-fondo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    var(--color-fondo),
+    transparent,
+    var(--color-fondo)
+  );
+}
+
+.restaurante-contenido {
+  position: relative;
+  z-index: 10;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .restaurante-contenido {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.restaurante-contenido .etiqueta-seccion {
+  margin-bottom: 2rem;
+  letter-spacing: 0.6em;
+}
+
+.restaurante-titulo {
+  font-family: 'Noto Serif', serif;
+  font-size: 3rem;
+  color: var(--color-sobre-superficie);
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .restaurante-titulo {
+    font-size: 6rem;
+  }
+}
+
+.restaurante-descripcion {
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-sobre-superficie-var);
+  max-width: 36rem;
+  font-size: 1.125rem;
+  line-height: 1.625;
+  margin-bottom: 3rem;
+}
+
+.btn-reservacion {
+  border: 1px solid rgba(230, 195, 100, 0.4);
+  color: var(--color-primario);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1rem 3rem;
+  border-radius: var(--radio-xl);
+  background: none;
+  cursor: pointer;
+  transition: background-color 500ms;
+}
+
+.btn-reservacion:hover {
+  background-color: rgba(230, 195, 100, 0.1);
+}
+
+/* ============================================================
+   SECCIÓN NOSOTROS
+   ============================================================ */
+.seccion-nosotros {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: var(--color-superficie-contenedor-bajo);
+}
+
+@media (min-width: 768px) {
+  .seccion-nosotros {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.nosotros-grilla {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 6rem;
+}
+
+@media (min-width: 768px) {
+  .nosotros-grilla {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nosotros-col-imagen {
+  position: relative;
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .nosotros-col-imagen {
+    order: 1;
+  }
+}
+
+.nosotros-borde-esquina {
+  display: none;
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  width: 12rem;
+  height: 12rem;
+  border: 1px solid rgba(230, 195, 100, 0.2);
+}
+
+@media (min-width: 768px) {
+  .nosotros-borde-esquina {
+    display: block;
+  }
+}
+
+.nosotros-imagen-wrap {
+  border-radius: var(--radio);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.nosotros-imagen {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%);
+  transition: filter 1000ms;
+}
+
+.nosotros-imagen:hover {
+  filter: grayscale(0%);
+}
+
+.nosotros-año {
+  display: none;
+  position: absolute;
+  bottom: -3rem;
+  right: -3rem;
+  color: rgba(230, 195, 100, 0.1);
+  font-family: 'Noto Serif', serif;
+  font-size: 8rem;
+  user-select: none;
+  line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .nosotros-año {
+    display: block;
+  }
+}
+
+.nosotros-col-texto {
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .nosotros-col-texto {
+    order: 2;
+  }
+}
+
+.nosotros-col-texto .etiqueta-seccion {
+  margin-bottom: 1.5rem;
+}
+
+.nosotros-titulo {
+  font-family: 'Noto Serif', serif;
+  font-size: 2.25rem;
+  color: var(--color-sobre-superficie);
+  margin-bottom: 2.5rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .nosotros-titulo {
+    font-size: 3.75rem;
+  }
+}
+
+.nosotros-parrafos {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: 'Manrope', sans-serif;
+  color: var(--color-sobre-superficie-var);
+  font-size: 1rem;
+  line-height: 1.625;
+}
+
+.nosotros-enlace-wrap {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nosotros-divisor {
+  width: 3rem;
+  height: 1px;
+  background-color: var(--color-primario);
+}
+
+.nosotros-enlace {
+  font-family: 'Noto Serif', serif;
+  font-style: italic;
+  color: var(--color-primario);
+}
+
+/* ============================================================
+   PIE DE PÁGINA
+   ============================================================ */
+.pie-pagina {
+  background-color: var(--color-fondo);
+  width: 100%;
+  padding-top: 6rem;
+  padding-bottom: 3rem;
+}
+
+.pie-grilla {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .pie-grilla {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pie-marca {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pie-logo {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.3em;
+  color: var(--color-primario);
+}
+
+.pie-lema {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--color-gris-500);
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.pie-col-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pie-nav-titulo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--color-sobre-superficie-var);
+  font-weight: 400;
+}
+
+.pie-enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pie-enlace {
+  color: var(--color-gris-500);
+  text-decoration: none;
+  transition: color 300ms;
+}
+
+.pie-enlace:hover {
+  color: var(--color-primario);
+}
+
+.pie-direccion {
+  color: var(--color-gris-500);
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.pie-inferior {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 6rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .pie-inferior {
+    flex-direction: row;
+  }
+}
+
+.pie-derechos {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-gris-500);
+}
+
+.pie-redes {
+  display: flex;
+  gap: 2rem;
+  color: var(--color-gris-500);
+}
+
+.pie-icono-red {
+  cursor: pointer;
+  transition: color 300ms;
+}
+
+.pie-icono-red:hover {
+  color: var(--color-primario);
+}

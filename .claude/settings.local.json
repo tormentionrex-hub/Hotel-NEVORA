@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf pages css js assets index.html)",
+      "Bash(mkdir -p paginas css/paginas js/datos js/paginas js/utils assets/imagenes assets/iconos assets/fuentes)",
+      "Bash(rm -rf paginas css js assets index.html)",
+      "Bash(mkdir -p paginas estilos/paginas scripts/paginas scripts/datos scripts/utilidades recursos/imagenes recursos/iconos recursos/fuentes)",
+      "Bash(rm -rf paginas estilos scripts recursos index.html)",
+      "Bash(mkdir -p pages styles/base styles/components styles/pages components js/pages js/data js/utils assets/images assets/icons assets/fonts)",
+      "Bash(touch index.html pages/habitaciones.html pages/nosotros.html pages/contacto.html styles/base/variables.css styles/base/reset.css styles/base/global.css styles/components/navbar.css styles/components/hero.css styles/components/footer.css styles/components/modal.css styles/components/booking.css styles/components/gallery.css styles/components/card.css styles/pages/home.css styles/pages/habitaciones.css styles/pages/nosotros.css styles/pages/contacto.css components/Navbar.js components/Hero.js components/Footer.js components/Modal.js components/Booking.js components/Gallery.js components/RoomCard.js js/pages/home.js js/pages/habitaciones.js js/pages/nosotros.js js/pages/contacto.js js/data/habitaciones.js js/data/servicios.js js/utils/dom.js js/utils/validadores.js js/utils/helpers.js)",
+      "Bash(npm init:*)",
+      "Bash(mkdir -p public/img public/js public/pages public/services public/styles)",
+      "Bash(touch public/pages/habitaciones.html public/pages/nosotros.html public/pages/contacto.html public/styles/style.css public/js/main.js public/services/api.js db.json server.js index.html)"
+    ]
+  }
+}
