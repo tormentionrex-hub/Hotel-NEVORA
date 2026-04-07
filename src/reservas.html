@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aurélyn | Reservas de Lujo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Estilos Globales (Para el Navbar original) -->
+    <link rel="stylesheet" href="css/global.css" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d7e3f7",
+                        "on-secondary-fixed-variant": "#3c4857",
+                        "secondary-container": "#3e4a59",
+                        "tertiary-fixed": "#e6e2d9",
+                        "surface-container-lowest": "#0b0e13",
+                        "surface-variant": "#32353a",
+                        "outline": "#99907e",
+                        "on-primary-fixed": "#241a00",
+                        "inverse-surface": "#e1e2e9",
+                        "primary-fixed": "#ffe08f",
+                        "surface-container-high": "#272a2f",
+                        "on-secondary-container": "#adb9cc",
+                        "on-primary": "#3d2e00",
+                        "on-error-container": "#ffdad6",
+                        "outline-variant": "#4d4637",
+                        "surface-dim": "#101418",
+                        "error": "#ffb4ab",
+                        "secondary-fixed-dim": "#bbc7da",
+                        "surface-bright": "#36393f",
+                        "primary-container": "#c9a84c",
+                        "primary": "#e6c364",
+                        "on-secondary-fixed": "#101c2a",
+                        "tertiary-container": "#aeaba3",
+                        "on-surface": "#e1e2e9",
+                        "on-background": "#e1e2e9",
+                        "surface-container-low": "#191c21",
+                        "surface-tint": "#e6c364",
+                        "inverse-on-surface": "#2e3036",
+                        "primary-fixed-dim": "#e6c364",
+                        "surface-container": "#1d2025",
+                        "surface": "#101418",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#32353a",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#484740",
+                        "tertiary": "#cac6be",
+                        "secondary": "#bbc7da",
+                        "on-tertiary-container": "#414039",
+                        "on-secondary": "#253140",
+                        "on-primary-fixed-variant": "#584400",
+                        "inverse-primary": "#755b00",
+                        "on-surface-variant": "#d0c5b2",
+                        "on-tertiary-fixed": "#1c1c16",
+                        "on-primary-container": "#503d00",
+                        "background": "#101418",
+                        "tertiary-fixed-dim": "#cac6be",
+                        "on-tertiary": "#31302b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { background-color: #101418; color: #e1e2e9; font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24; }
+        .serif-title { font-family: 'Noto Serif', serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        
+        /* Minimalist Input Style */
+        .minimal-input {
+            background-color: transparent !important;
+            border: none !important;
+            border-bottom: 1px solid rgba(77, 70, 55, 0.3) !important;
+            padding: 0.75rem 0 !important;
+            border-radius: 0 !important;
+            transition: all 0.3s ease;
+            box-shadow: none !important;
+            outline: none !important;
+            color: #e1e2e9 !important;
+        }
+        .minimal-input:focus {
+            border-bottom-color: #e6c364 !important;
+            background-color: rgba(230, 195, 100, 0.05) !important;
+        }
+        
+        /* Chrome Autofill Override */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: #e1e2e9 !important;
+            -webkit-box-shadow: 0 0 0px 1000px #101418 inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+
+        /* Select element dark styling */
+        select.minimal-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23e6c364'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem !important;
+        }
+        
+        select.minimal-input option {
+            background-color: #1a1c21 !important;
+            color: #e1e2e9 !important;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary/30 cuerpo-pagina">
+
+  <!-- Barra de Navegación Superior (Reutilizada de index.html) -->
+  <nav class="nav-sitio">
+    <a href="index.html" class="nav-marca">NEVORA</a>
+    
+    <div class="nav-menu">
+      <a class="nav-enlace" href="index.html#habitaciones">Habitaciones</a>
+      <a class="nav-enlace" href="pages/restaurante.html">Restaurante</a>
+      <a class="nav-enlace nav-enlace--activo" href="reservas.html">Reservas</a>
+      <a class="nav-enlace" href="#">Eventos</a>
+      <a class="nav-enlace" href="index.html#nosotros">Nosotros</a>
+      
+      <!-- Selector de Destinos (Dropdown) -->
+      <div class="destinos-contenedor">
+        <button class="destinos-btn">
+          Nuestros Destinos
+          <span class="material-symbols-outlined icono-expandir">expand_more</span>
+        </button>
+        <div class="destinos-desplegable">
+          <a href="#">Costa Rica</a>
+          <a href="#">Canadá</a>
+          <a href="#">Estados Unidos</a>
+          <a href="#">Chile</a>
+          <a href="#">Suiza</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="btn-reservar" href="reservas.html">RESERVAR AHORA</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+
+      <div class="hero-overlay"></div>
+      <video
+        class="hero-bg-imagen"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source src="video/ReservasVideo.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-contenido">
+        <div class="hero-titulo">NEVORA</div>
+        <p class="hero-lema">Llegue a la cumbre del lujo</p>
+        <div class="hero-divisor-wrap">
+          <div class="hero-divisor"></div>
+        </div>
+        <h1 class="serif-title text-3xl md:text-5xl mt-12 tracking-tight">Finalice su Reserva</h1>
+      </div>
+      <div class="indicador-scroll">
+        <span class="etiqueta-scroll">Reservar</span>
+        <div class="linea-scroll"></div>
+        <span class="material-symbols-outlined icono-flecha">keyboard_arrow_down</span>
+      </div>
+  </header>
+
+  <main class="py-32">
+
+
+    <div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16">
+        <!-- LEFT CONTENT -->
+        <div class="lg:col-span-8 space-y-24">
+            
+            <!-- ROOM SELECTION -->
+            <section id="habitaciones-seleccion">
+                <div class="flex items-end justify-between mb-12 border-b border-outline-variant/10 pb-6">
+                    <div class="space-y-2">
+                        <h2 class="serif-title text-4xl">Selección de Estancia</h2>
+                        <p class="text-on-surface-variant font-body text-sm uppercase tracking-widest">Atributos de Clase: Suite</p>
+                    </div>
+                    <span class="text-primary font-serif italic">Step 01</span>
+                </div>
+
+                <div class="space-y-8">
+                    <!-- Standard -->
+                    <div onclick="selectRoom('standard', 450, 'Standard Heritage')" class="room-card group relative grid grid-cols-1 md:grid-cols-5 bg-surface-container-low overflow-hidden hover:bg-surface-container transition-all duration-500 cursor-pointer border border-transparent hover:border-primary/30">
+                        <div class="md:col-span-2 overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7uyJTvmvKxEj_NMF8Sj1lbkaKF5n_44zgzBuT_jcIjqCd27OzubImcRiqwFmkBUbH9at6h54vfciV9wkxxuLoxlTwvmKJJwSgeT736ziLyT_YMd57DQlaMJZpHnnQOaEKS95s0h8uhG_izYv9WCHzik3mYGJyBe2-Tcof7lfEdyVGjdkTFenMBtlR1Mwj9W7CZxI-1wPPHPXBaMgylY6HWgynofUWhO-pnovP7w5rRgzplz-Ru8sbbMUzLqGFz0D5vos-fsa-U1oT" alt="Standard room"/>
+                        </div>
+                        <div class="md:col-span-3 p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="serif-title text-2xl">Standard Heritage</h3>
+                                    <span class="text-primary font-body tracking-tighter">$450 <small class="text-[10px] uppercase tracking-normal">/ noche</small></span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">45m² • Vistas al Jardín Botánico • Ropa de cama de 800 hilos.</p>
+                            </div>
+                            <button class="select-btn w-fit text-xs font-label tracking-widest uppercase border-b border-primary/30 pb-1 text-primary hover:border-primary transition-all">Seleccionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Deluxe -->
+                    <div onclick="selectRoom('deluxe', 720, 'Deluxe Panorama')" class="room-card group relative grid grid-cols-1 md:grid-cols-5 bg-surface-container-low overflow-hidden hover:bg-surface-container transition-all duration-500 cursor-pointer border border-transparent hover:border-primary/30">
+                        <div class="md:col-span-2 overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbKaYYLKOZpxkeI6pRu-E98JfmjDL3B8iykYWXZn4cByCZWh7lAsr6NolZkfyr3qUsicQZ981Rs4H_DKWsiXg8rpj9124EEgBiKMUkgoqZKRw-FNtVyTkyZaWgVcYMhac_tUerQYzWxlVmo_eBbIStXZagsMwc4TnQFVnRP4kO1cATM6F3PMri3YMs0xeZCkTlH5nVuAkINK9UxHdiMb-jh2QG5fD8XDKorXZaJ1PpOEl6HmqROaJaCKSQQEj5bk5Nyz9JY4pR_Mt2" alt="Deluxe room"/>
+                        </div>
+                        <div class="md:col-span-3 p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="flex flex-col">
+                                        <h3 class="serif-title text-2xl">Deluxe Panorama</h3>
+                                        <span class="text-[10px] text-primary uppercase tracking-[0.2em] mt-1">Recomendado</span>
+                                    </div>
+                                    <span class="text-primary font-body tracking-tighter">$720 <small class="text-[10px] uppercase tracking-normal">/ noche</small></span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">75m² • Terraza Privada • Bañera de mármol tallado • Acceso exclusivo al Spa.</p>
+                            </div>
+                            <button class="select-btn w-fit text-xs font-label tracking-widest uppercase border-b border-primary/30 pb-1 text-primary hover:border-primary transition-all">Seleccionar</button>
+                        </div>
+                    </div>
+
+                    <!-- Presidential -->
+                    <div onclick="selectRoom('presidential', 2150, 'Presidential Aurélyn')" class="room-card group relative grid grid-cols-1 md:grid-cols-5 bg-surface-container-low overflow-hidden hover:bg-surface-container transition-all duration-500 cursor-pointer border border-transparent hover:border-primary/30">
+                        <div class="md:col-span-2 overflow-hidden">
+                            <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBV_mFi_zH_cejcvDfbc_bdTXKjBA7vuTyvVR3wAteePpBDSrCO-ZJxwtpQOfFMhXUigWWnb6HMAZWib2-sjyCLc61tipgAL3JCZqPGswhmVzuhClZHQ0xi8V0x8yjPGNKTKKTTSzK7N99VJHRfnv1rlgLkd06XHOB7D0die54IJQWqELuQvgF0y9u5chxHzYrZqv6AVx3RvVoIhZbHm63Iu0BPm5CwdFDT9ViK8koHpGMWo2m_gmwUXB70pA0NZYC4rY0nukHHE8A" alt="Presidential room"/>
+                        </div>
+                        <div class="md:col-span-3 p-8 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="serif-title text-2xl">Presidential Aurélyn</h3>
+                                    <span class="text-primary font-body tracking-tighter">$2,150 <small class="text-[10px] uppercase tracking-normal">/ noche</small></span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm font-light leading-relaxed mb-6">180m² • Servicio de Mayordomo 24/7 • Bodega privada • Piscina infinity propia.</p>
+                            </div>
+                            <button class="select-btn w-fit text-xs font-label tracking-widest uppercase border-b border-primary/30 pb-1 text-primary hover:border-primary transition-all">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GUEST DATA -->
+            <section id="huesped-form">
+                <div class="flex items-end justify-between mb-12 border-b border-outline-variant/10 pb-6">
+                    <div class="space-y-2">
+                        <h2 class="serif-title text-4xl">Datos del Huésped</h2>
+                        <p class="text-on-surface-variant font-body text-sm uppercase tracking-widest">Atributos de Instancia: Cliente</p>
+                    </div>
+                    <span class="text-primary font-serif italic">Step 02</span>
+                </div>
+                <form id="booking-form" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div class="space-y-1">
+                        <label class="font-label text-[10px] uppercase tracking-[0.2em] text-[#e6c364]/70">Nombre Completo (Cliente.nombre)</label>
+                        <input id="guest-name" class="minimal-input w-full text-on-surface font-body tracking-wide placeholder:text-surface-variant" placeholder="Como aparece en su pasaporte" type="text"/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label text-[10px] uppercase tracking-[0.2em] text-[#e6c364]/70">Identificación Personal (Cliente.id)</label>
+                        <input id="guest-id" maxlength="9" class="minimal-input w-full text-on-surface font-body tracking-wide placeholder:text-surface-variant" placeholder="Ej: 000000000" type="text"/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label text-[10px] uppercase tracking-[0.2em] text-[#e6c364]/70">Correo (Cliente.contacto)</label>
+                        <input id="guest-email" class="minimal-input w-full text-on-surface font-body tracking-wide placeholder:text-surface-variant" placeholder="ejemplo@hotel.com" type="email"/>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="font-label text-[10px] uppercase tracking-[0.2em] text-[#e6c364]/70">Nacionalidad</label>
+                        <select class="minimal-input w-full text-on-surface font-body tracking-wide">
+                            <option value="">Seleccione su origen</option>
+                            <option value="CR">Costa Rica (+506)</option>
+                            <option value="US">Estados Unidos (+1)</option>
+                            <option value="ES">España (+34)</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-1">
+                        <label class="font-label text-[10px] uppercase tracking-[0.2em] text-[#e6c364]/70">Notas del Cliente</label>
+                        <textarea class="minimal-input w-full text-on-surface font-body tracking-wide placeholder:text-surface-variant resize-none" placeholder="Alergias o solicitudes especiales..." rows="3"></textarea>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+        <!-- ASIDE: REFLEJO PURO DE LAS CLASES POO -->
+        <aside class="lg:col-span-4 relative">
+            <div class="sticky top-32 bg-surface-container-low p-10 space-y-8 shadow-2xl border-t border-primary/10">
+                <div class="text-center space-y-2">
+                    <span class="font-label text-[10px] uppercase tracking-[0.3em] text-primary">Inspección de Clase</span>
+                    <h3 class="serif-title text-3xl">Estado del Objeto</h3>
+                </div>
+                
+                <div class="space-y-6 pt-6 border-t border-outline-variant/10">
+                    <!-- Cada línea representa un atributo directo de tus archivos en /clases -->
+                    <div class="space-y-4">
+                        <div class="flex flex-col">
+                            <span class="text-[9px] uppercase tracking-widest text-[#e6c364] mb-1">Clase Habitacion (Atributos)</span>
+                            <div class="flex justify-between text-sm py-1 border-b border-outline-variant/5">
+                                <span class="text-on-surface-variant font-light">this.tipo</span>
+                                <span class="font-body text-on-surface" id="obj-tipo">Ninguna</span>
+                            </div>
+                            <div class="flex justify-between text-sm py-1 border-b border-outline-variant/5">
+                                <span class="text-on-surface-variant font-light">this.precio</span>
+                                <span class="font-body text-primary font-bold" id="obj-precio">$0.00</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col">
+                            <span class="text-[9px] uppercase tracking-widest text-[#e6c364] mb-1">Clase Hotel (Atributos)</span>
+                            <div class="flex justify-between text-sm py-1 border-b border-outline-variant/5">
+                                <span class="text-on-surface-variant font-light">this.nombre</span>
+                                <span class="font-body text-on-surface" id="obj-hotel">NEVORA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-outline-variant/20">
+                    <button onclick="finalizarReserva()" class="w-full bg-primary text-on-primary py-4 font-label tracking-[0.2em] uppercase text-xs hover:bg-primary-container transition-all duration-300 shadow-lg shadow-primary/10">
+                        Confirmar Reserva
+                    </button>
+                </div>
+                
+                <p class="text-center text-[9px] text-on-surface-variant font-light italic leading-relaxed">
+                 <strong class="text-primary"></strong>
+                </p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<!-- Reused Footer -->
+<footer class="bg-[#101418] w-full py-16 border-t border-[#272a2f]/10">
+    <div class="max-w-7xl mx-auto flex flex-col items-center gap-8 px-8">
+        <div class="text-lg font-serif text-[#e6c364]">AURÉLYN</div>
+        <div class="flex flex-wrap justify-center gap-8">
+            <a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-white transition-all" href="#">Privacidad</a>
+            <a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-white transition-all" href="#">Términos</a>
+            <a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-white transition-all" href="#">Prensa</a>
+            <a class="font-sans text-xs tracking-widest uppercase text-slate-500 hover:text-white transition-all" href="#">Contacto</a>
+        </div>
+        <div class="text-center">
+            <p class="font-sans text-[10px] tracking-widest uppercase text-slate-600">© 2024 Hotel Aurélyn, Heredia, Costa Rica. Excelencia Editorial.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Logic Scripts -->
+<script src="../clases/Hotel.js"></script>
+<script src="../clases/Habitacion.js"></script>
+<script src="../clases/Cliente.js"></script>
+<script src="../clases/Reserva.js"></script>
+
+<!-- GSAP Animation Library from Skills -->
+<script src="../skills/gsap.min.js"></script>
+
+<script>
+    // Instance of Hotel
+    const hotelNevora = new Hotel("Hotel NEVORA", "Heredia, Costa Rica");
+
+    // State & Initial Values for Animation (START AT 0)
+    let currentPrices = {
+        roomTotal: 0,
+        vipTotal: 0,
+        taxTotal: 0,
+        grandTotal: 0
+    };
+
+    let selectedRoomType = '';
+    let selectedRoomPrice = 0;
+    let selectedRoomName = '';
+    const nights = 6;
+    const vipServiceBase = 250;
+
+    function selectRoom(type, price, name) {
+        // Toggle Logic: If clicking the same room, deselect it
+        if (selectedRoomType === type) {
+            selectedRoomType = '';
+            selectedRoomPrice = 0;
+            selectedRoomName = 'Ninguna seleccionada';
+        } else {
+            selectedRoomType = type;
+            selectedRoomPrice = price;
+            selectedRoomName = name;
+        }
+
+        // Update UI selection on cards
+        const cards = document.querySelectorAll('.room-card');
+        cards.forEach(card => {
+            // Extraer el tipo de la función onclick para comparar
+            const cardOnClick = card.getAttribute('onclick');
+            const cardType = cardOnClick.match(/'([^']+)'/)[1];
+            
+            if (cardType === selectedRoomType) {
+                card.classList.remove('border-transparent');
+                card.classList.add('border-primary/20', 'ring-1', 'ring-primary/20');
+                const btn = card.querySelector('.select-btn');
+                btn.textContent = 'Seleccionado';
+                btn.className = 'select-btn w-fit text-xs font-label tracking-widest uppercase bg-primary text-on-primary px-6 py-2 transition-all';
+            } else {
+                card.classList.remove('border-primary/20', 'ring-1', 'ring-primary/20');
+                card.classList.add('border-transparent');
+                const btn = card.querySelector('.select-btn');
+                btn.textContent = 'Seleccionar';
+                btn.className = 'select-btn w-fit text-xs font-label tracking-widest uppercase border-b border-primary/30 pb-1 text-primary hover:border-primary transition-all';
+            }
+        });
+
+        updateSummary();
+    }
+
+    function updateSummary() {
+        // --- POO: INSTANCIA DE HABITACIÓN ---
+        let hab;
+        if (selectedRoomType === 'standard') hab = new Economica(hotelNevora.nombre, hotelNevora.direccion, 0);
+        else if (selectedRoomType === 'deluxe') hab = new Doble(hotelNevora.nombre, hotelNevora.direccion, 0);
+        else if (selectedRoomType === 'presidential') hab = new Suite(hotelNevora.nombre, hotelNevora.direccion, 0);
+        else hab = { precio: 0, tipo: 'Ninguna' }; 
+
+        // Actualizamos los campos que corresponden a los ATRIBUTOS DE CLASE
+        document.getElementById('obj-tipo').textContent = hab.tipo;
+        document.getElementById('obj-hotel').textContent = hotelNevora.nombre;
+
+        // Animación simple para el atributo Precio
+        gsap.to(currentPrices, {
+            grandTotal: hab.precio,
+            duration: 0.8,
+            ease: "power2.out",
+            onUpdate: function() {
+                document.getElementById('obj-precio').textContent = `$${this.targets()[0].grandTotal.toLocaleString('en-US', {minimumFractionDigits: 2})}`;
+            }
+        });
+    }
+
+    function finalizarReserva() {
+        // Limpiamos la consola para que solo se vea el POO (sin avisos de Tailwind/HTML)
+        console.clear();
+
+        const name = document.getElementById('guest-name').value;
+        const email = document.getElementById('guest-email').value;
+        const personalId = document.getElementById('guest-id').value;
+
+        if (!name || !email || !personalId) {
+            alert('Por favor complete todos los datos del huésped para continuar.');
+            return;
+        }
+
+        // --- LAS SIGUIENTES LÍNEAS ACTIVAN TUS CLASES (VER CONSOLA) ---
+        
+        // 1. Instanciamos el Cliente
+        const cliente = new Cliente(name, personalId, email);
+
+        // 2. Instanciamos la Habitación por Polimorfismo
+        let habitacion;
+        const num = Math.floor(Math.random() * 900) + 100;
+        
+        if (selectedRoomType === 'standard') habitacion = new Economica(hotelNevora.nombre, hotelNevora.direccion, num);
+        else if (selectedRoomType === 'deluxe') habitacion = new Doble(hotelNevora.nombre, hotelNevora.direccion, num);
+        else if (selectedRoomType === 'presidential') habitacion = new Suite(hotelNevora.nombre, hotelNevora.direccion, num);
+
+        if (habitacion) {
+            // 3. Registramos en el Hotel (Lógica interna)
+            hotelNevora.registrarCliente(cliente);
+            hotelNevora.agregarHabitacion(habitacion);
+
+            // 4. Creamos la Reserva final (Une objetos)
+            const reserva = new Reserva(cliente, habitacion);
+            
+            // 5. Guardamos la última reserva en el estado del Hotel
+            hotelNevora.ultimaReserva = reserva;
+            hotelNevora.guardarEstado();
+
+            // 6. LLAMADA AL MÉTODO DE CLASE (Único output en consola)
+            reserva.confirmarReserva();
+
+            alert('Reserva Exitosa. El objeto Reserva ha sido instanciado y guardado en la info unificada.');
+        } else {
+            alert('Por favor selecciona una habitación.');
+        }
+    }
+</script>
+
+</body>
+</html>

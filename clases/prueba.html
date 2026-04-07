@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>NEVORA</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #e8e0d4;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 1.4rem;
+      letter-spacing: 0.2em;
+      color: #c8a96e;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .subtitulo {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 40px;
+      letter-spacing: 0.1em;
+    }
+    .contenedor {
+      max-width: 950px;
+      margin: 0 auto;
+      grid-template-columns: 1fr 1fr;
+      display: grid;
+      gap: 24px;
+    }
+    .panel {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 28px;
+    }
+    .panel h2 {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: #c8a96e;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    select, input {
+      width: 100%;
+      background: #111;
+      border: 1px solid #333;
+      color: #e8e0d4;
+      padding: 10px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+    button {
+      width: 100%;
+      background: #c8a96e;
+      color: #0f0f0f;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    .resultados { display: flex; flex-direction: column; gap: 12px; }
+    .tarjeta {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: #3a2a1a;
+      color: #c8a96e;
+    }
+    .tarjeta-numero { font-size: 1.4rem; font-weight: 700; margin: 10px 0; }
+    .tarjeta-linea { font-size: 0.85rem; color: #aaa; margin: 4px 0; }
+  </style>
+</head>
+<body>
+
+  <h1>NEVORA</h1>
+  <p class="subtitulo">Gestión de Reservas</p>
+
+  <div class="contenedor">
+    <div class="panel">
+      <h2>Registro de Operación</h2>
+      <label>Huésped</label>
+      <input type="text" id="nombre-cli" placeholder="Nombre completo" />
+      <label>Identificación Personal</label>
+      <input type="text" id="id-cli" placeholder="Número de ID" />
+      <label>Contacto Telefónico</label>
+      <input type="text" id="email-cli" placeholder="Teléfono" />
+      <label>Tipo de Habitación</label>
+      <select id="tipo">
+        <option value="">— Seleccionar —</option>
+        <option value="ec">Económica</option>
+        <option value="gr">Doble</option>
+        <option value="st">Suite</option>
+      </select>
+      <label>Número de cuarto</label>
+      <input type="number" id="numero" placeholder="Ej: 101" />
+      <button onclick="guardarTodo()">Guardar Reserva</button>
+    </div>
+    <div class="resultados" id="resultados"></div>
+  </div>
+
+  <script src="Hotel.js"></script>
+  <script src="Habitacion.js"></script>
+  <script src="Cliente.js"></script>
+  <script src="Reserva.js"></script>
+
+  <script>
+    const hotelBarry = new Hotel("Hotel Barry", "San Ramon City");
+
+    window.onload = function() {
+        if (hotelBarry.habitaciones.length > 0) {
+            hotelBarry.habitaciones.forEach(h => crearTarjeta(h));
+        }
+    };
+
+    function guardarTodo() {
+      const nombreCli = document.getElementById("nombre-cli").value;
+      const idCli = document.getElementById("id-cli").value;
+      const emailCli = document.getElementById("email-cli").value;
+      const tipo   = document.getElementById("tipo").value;
+      const numero = parseInt(document.getElementById("numero").value);
+
+      if (!nombreCli || !tipo || !numero) {
+          alert("Faltan datos.");
+          return;
+      }
+
+      const cliente = new Cliente(nombreCli, idCli, emailCli);
+      
+      let hijo;
+      if (tipo === "ec") hijo = new Economica(hotelBarry.nombre, hotelBarry.direccion, numero);
+      else if (tipo === "gr") hijo = new Doble(hotelBarry.nombre, hotelBarry.direccion, numero);
+      else if (tipo === "st") hijo = new Suite(hotelBarry.nombre, hotelBarry.direccion, numero);
+
+      hotelBarry.registrarCliente(cliente);
+      hotelBarry.agregarHabitacion(hijo);
+
+      const reserva = new Reserva(cliente, hijo);
+      reserva.confirmarReserva();
+
+      crearTarjeta(hijo);
+    }
+
+    function crearTarjeta(hab) {
+      const contenedor = document.getElementById("resultados");
+      const tarjeta = document.createElement("div");
+      tarjeta.className = "tarjeta";
+      tarjeta.innerHTML = `
+        <div class="tarjeta-tipo"><span class="badge">${hab.nombre}</span></div>
+        <div class="tarjeta-numero">Habitación #${hab.numero}</div>
+        <div class="tarjeta-linea">Tipo: ${hab.tipo}</div>
+        <div class="tarjeta-linea">Ubicación: ${hab.direccion}</div>
+      `;
+      contenedor.prepend(tarjeta);
+    }
+  </script>
+</body>
+</html>

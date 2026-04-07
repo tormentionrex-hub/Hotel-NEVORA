@@ -83,6 +83,13 @@
 }
 
 /* === Cuerpo === */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .cuerpo-pagina {
   font-family: 'Manrope', sans-serif;
   background-color: var(--color-fondo);
@@ -164,6 +171,8 @@
 }
 
 .btn-reservar {
+  display: inline-block;
+  text-decoration: none;
   background: linear-gradient(135deg, #e6c364 0%, #c9a84c 100%);
   color: var(--color-sobre-primario);
   font-family: 'Manrope', sans-serif;
@@ -187,7 +196,11 @@
 .hero {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -634,19 +647,17 @@
 .restaurante-fondo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    var(--color-fondo),
-    transparent,
-    var(--color-fondo)
+  background: radial-gradient(
+    circle at center,
+    rgba(16, 20, 24, 0.2) 0%,
+    rgba(16, 20, 24, 0.85) 100%
   );
 }
 
 .restaurante-contenido {
   position: relative;
   z-index: 10;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding: 8rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

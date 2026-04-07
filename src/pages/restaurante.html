@@ -92,6 +92,7 @@
     <div class="nav-menu">
       <a class="nav-enlace" href="../index.html#habitaciones">Habitaciones</a>
       <a class="nav-enlace nav-enlace--activo" href="#">Restaurante</a>
+      <a class="nav-enlace" href="../reservas.html">Reservas</a>
       <a class="nav-enlace" href="#">Eventos</a>
       <a class="nav-enlace" href="../index.html#nosotros">Nosotros</a>
       
@@ -115,9 +116,19 @@
   </nav>
 
 <!-- Sección Hero -->
-<header class="relative h-screen w-full overflow-hidden hero">
-<img class="absolute inset-0 w-full h-full object-cover hero-bg-imagen" data-alt="toma cinematográfica amplia de un lujoso restaurante iluminado por velas al atardecer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxEYLdNfufRqMVI6TSdT9HUg-0EyZVzrB2IX3YnCKQklL7PG0NWzDY0TuArdy3aWCoq8KFpRn7ZwfBsmXlZfh5NyfWoS0q7icULenFh368yt_FbKC7qeqvddu7zcT1b5INLb2c3bwaF_PVkfAUTr2MVK8oM9TMsS89uzYiGd8L67naoiNq-pBWZQ1vo6SGNptOmKgmVuH1KKVNLMAvXlLz-_dFr4yxabIZznWnHzh34G8DlvyzeoKnSqJOPKzbT5yteFOYlyrIZY"/>
-<div class="absolute inset-0 hero-gradient"></div>
+<header class="hero">
+
+    <video
+      class="absolute inset-0 w-full h-full object-cover hero-bg-imagen"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src="../video/RestauranteVideo.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 hero-gradient"></div>
 <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
 <h1 class="serif text-5xl md:text-8xl text-primary tracking-tighter mb-4 hero-titulo">La Mesa NEVORA</h1>
 <p class="font-label text-sm md:text-lg tracking-[0.4em] uppercase text-on-surface-variant font-light hero-lema">Una Sinfonía de Sabores y Gracia Atemporal</p>
