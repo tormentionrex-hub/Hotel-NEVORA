@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEVORA | La Mesa NEVORA</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+<!-- CSS Modular -->
+<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="../css/restaurante.css" />
+<link rel="stylesheet" href="../../skills/gsap-styles.css" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1d2025",
+                    "on-primary-fixed-variant": "#584400",
+                    "on-secondary-fixed": "#101c2a",
+                    "tertiary-container": "#aeaba3",
+                    "secondary-fixed-dim": "#bbc7da",
+                    "on-primary": "#3d2e00",
+                    "tertiary-fixed-dim": "#cac6be",
+                    "error-container": "#93000a",
+                    "outline": "#99907e",
+                    "surface-container-highest": "#32353a",
+                    "background": "#101418",
+                    "tertiary": "#cac6be",
+                    "error": "#ffb4ab",
+                    "primary-fixed-dim": "#e6c364",
+                    "on-secondary-fixed-variant": "#3c4857",
+                    "surface-tint": "#e6c364",
+                    "surface-dim": "#101418",
+                    "on-primary-container": "#503d00",
+                    "primary": "#e6c364",
+                    "on-secondary": "#253140",
+                    "secondary": "#bbc7da",
+                    "tertiary-fixed": "#e6e2d9",
+                    "primary-container": "#c9a84c",
+                    "on-tertiary-fixed-variant": "#484740",
+                    "on-primary-fixed": "#241a00",
+                    "surface": "#101418",
+                    "surface-container-low": "#191c21",
+                    "surface-bright": "#36393f",
+                    "on-error-container": "#ffdad6",
+                    "outline-variant": "#4d4637",
+                    "on-surface-variant": "#d0c5b2",
+                    "on-background": "#e1e2e9",
+                    "primary-fixed": "#ffe08f",
+                    "on-tertiary": "#31302b",
+                    "inverse-on-surface": "#2e3036",
+                    "on-secondary-container": "#adb9cc",
+                    "on-tertiary-fixed": "#1c1c16",
+                    "on-surface": "#e1e2e9",
+                    "surface-variant": "#32353a",
+                    "secondary-container": "#3e4a59",
+                    "on-tertiary-container": "#414039",
+                    "inverse-primary": "#755b00",
+                    "surface-container-high": "#272a2f",
+                    "surface-container-lowest": "#0b0e13",
+                    "inverse-surface": "#e1e2e9",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#d7e3f7"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="cuerpo-pagina">
+  <!-- Barra de Navegación Superior -->
+  <nav class="nav-sitio">
+    <a href="../index.html" class="nav-marca">NEVORA</a>
+    
+    <div class="nav-menu">
+      <a class="nav-enlace" href="../index.html#habitaciones">Habitaciones</a>
+      <a class="nav-enlace nav-enlace--activo" href="#">Restaurante</a>
+      <a class="nav-enlace" href="#">Eventos</a>
+      <a class="nav-enlace" href="../index.html#nosotros">Nosotros</a>
+      
+      <!-- Selector de Destinos (Dropdown) -->
+      <div class="destinos-contenedor">
+        <button class="destinos-btn">
+          Nuestros Destinos
+          <span class="material-symbols-outlined icono-expandir">expand_more</span>
+        </button>
+        <div class="destinos-desplegable">
+          <a href="#">Costa Rica</a>
+          <a href="#">Canadá</a>
+          <a href="#">Estados Unidos</a>
+          <a href="#">Chile</a>
+          <a href="#">Suiza</a>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-reservar">RESERVAR AHORA</button>
+  </nav>
+
+<!-- Sección Hero -->
+<header class="relative h-screen w-full overflow-hidden hero">
+<img class="absolute inset-0 w-full h-full object-cover hero-bg-imagen" data-alt="toma cinematográfica amplia de un lujoso restaurante iluminado por velas al atardecer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMpxEYLdNfufRqMVI6TSdT9HUg-0EyZVzrB2IX3YnCKQklL7PG0NWzDY0TuArdy3aWCoq8KFpRn7ZwfBsmXlZfh5NyfWoS0q7icULenFh368yt_FbKC7qeqvddu7zcT1b5INLb2c3bwaF_PVkfAUTr2MVK8oM9TMsS89uzYiGd8L67naoiNq-pBWZQ1vo6SGNptOmKgmVuH1KKVNLMAvXlLz-_dFr4yxabIZznWnHzh34G8DlvyzeoKnSqJOPKzbT5yteFOYlyrIZY"/>
+<div class="absolute inset-0 hero-gradient"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+<h1 class="serif text-5xl md:text-8xl text-primary tracking-tighter mb-4 hero-titulo">La Mesa NEVORA</h1>
+<p class="font-label text-sm md:text-lg tracking-[0.4em] uppercase text-on-surface-variant font-light hero-lema">Una Sinfonía de Sabores y Gracia Atemporal</p>
+<div class="mt-12 w-px h-24 bg-gradient-to-b from-primary/60 to-transparent hero-divisor"></div>
+</div>
+</header>
+
+<!-- Sección de Filosofía: Arte Culinario -->
+<section id="filosofia" class="py-32 px-6 md:px-24 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-7 relative">
+<div class="fil-imagen aspect-[4/5] overflow-hidden">
+<img class="fil-img w-full h-full object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-1000" data-alt="primer plano de un chef michelin colocando una guarnición con pinzas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjm3G24UAgjzHAZEOxhpK3xLsn94_AhhJ7vU1TTPf4HmNm5NmtDMIEIW04FiElK7OgVNuVZ3E_zgFe7ht6cbaMwkKvUlMlL0AJvGv9P-aXnSwa2mwegPu8xngZlyxf4y1IWjK91K-FeKsOa3AoD5R36yxMHrHf-BCv_Q8L7jCbsOTsng5547rlMmvwt4gBCnjcw2bi9oIfkzKn1QForf2J2QJUGjDJRTNBOwra-5D5hOx8QDtDmfox94cFItYW8WXPVQEWxU6vAQM0"/>
+</div>
+<div class="fil-caja absolute -bottom-8 -right-8 bg-surface-container p-12 hidden md:block">
+<span class="fil-numero serif text-primary text-6xl opacity-20 block mb-4">01</span>
+<h3 class="fil-caja-titulo serif text-2xl text-on-surface">El Origen</h3>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center">
+<h2 class="fil-titulo serif text-4xl md:text-5xl mb-8 leading-tight">Arte Culinario en NEVORA</h2>
+<div class="space-y-6 text-on-surface-variant leading-relaxed font-light text-lg">
+<p class="fil-parrafo">En el corazón de nuestro hotel reside un compromiso profundo con la conexión entre la tierra y el epicúreo. Nuestra filosofía se arraiga en el ritmo pausado de las estaciones, seleccionando ingredientes raros de productores artesanos que comparten nuestra reverencia por la naturaleza.</p>
+<p class="fil-parrafo">Cada plato es un lienzo, una narrativa meticulosamente compuesta de textura, temperatura y herencia. Buscamos la perfección gastronómica no a través de la complejidad, sino a través de la claridad del sabor, elevando los ingredientes más sencillos a un estado de gracia atemporal.</p>
+</div>
+<div class="mt-12">
+<a class="fil-enlace inline-block font-label text-primary text-sm tracking-widest uppercase border-b border-primary/30 pb-2 hover:border-primary transition-all" href="#">Explore nuestro Ethos</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Creaciones de Autor -->
+<section class="py-32 bg-surface-container-low" id="signature-creations">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-20 signature-header">
+<div>
+<span class="font-label text-xs tracking-[0.3em] uppercase text-primary block mb-4">Selección de Temporada</span>
+<h2 class="serif text-4xl md:text-5xl">Creaciones de Autor</h2>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-4xl text-outline-variant">restaurant_menu</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Plato 1 -->
+<div class="group cursor-pointer signature-card">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="filete de rodaballo asado con piel dorada en emulsión de champagne" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBUREwH8NpyTYZD0lpKoBrxVaMzJoNu-KsNQxam0hsGmd9af8PqISr9baa3bYF63TG4njY2lhKCY97f3mzbyH7-pyd3qKLR8b8kvvf-7hDX6az2hTBVJLlKnDToBaVofrDr6C3XjY_hGy6qrlHZd0rNj42YRgwbyI2a_9sx-bJcqzHXt1ECw03xoYL53XqWJS6f160LR6SfpDw11YHDXsNKv0EDZTQyShwmRruCbHbXJ_FWZ5R_everdRduR2zg2iLt4Zt5BYsqu1l"/>
+</div>
+<h3 class="serif text-2xl text-primary mb-3 dish-text">Rodaballo Salvaje con Emulsión de Champagne</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed dish-text">Rodaballo del Mar del Norte capturado con sedal, suavemente escalfado en mantequilla salada, servido con una emulsión aterciopelada de Vintage Blanc de Blancs y caviar Oscietra.</p>
+</div>
+<!-- Plato 2 -->
+<div class="group cursor-pointer md:mt-24 signature-card">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="medallón de carne wagyu con jus oscuro brillante y puré de raíz" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAswm_0sLqRBXMA3oMmLHecJXEQp0JyyJg5R8xWcaDPrve25WWUbMCwql9hSHubmom_A0MDjpe8PpZ1m_hhJJnY4ONxPC8S-gwQ7IOiWoxWuWRMVB5GaVtG-Mjz4_vGbSqzSnkUSp22-mSqtkWsvaDD5BQ3gujC3lQIs05ypAJVgnYWCQsWBFIQQr8oAxaPi7URQIv_1pgHI1gHOi7be7QUS5NdfHe_ilAvg9Hvdf-TprVCPY2BsrUQW8K0utl3vbkLciW0380bXFmF"/>
+</div>
+<h3 class="serif text-2xl text-primary mb-3 dish-text">Wagyu A5 y Trufa del Perigord</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed dish-text">Carne de herencia terminada con reducción de trufa negra, seda de chirivía ahumada y delicadas cintas de rábano de invierno.</p>
+</div>
+<!-- Plato 3 -->
+<div class="group cursor-pointer md:mt-12 signature-card">
+<div class="aspect-[3/4] mb-8 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="domo de chocolate suave sobre hoja de oro con reducción de frambuesa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtO0OfUnJj40ZHWRQIj4qyKFjvUZByIHJVV-jUROIsMOjLEegPRo0gf27l91266ZVRm9HRPxVZ6_OFWC_-8w2lsKf_ZQy18U50NOUUAPi42f-BApgRmtIaKQQNGNytnugXz0eGbzC8dcKVzaTBOfMnpoVPvFmOgFAoivhi2LLRaA0mxosKBM6_38XJ1lLWBDvIEM-pdnhh6SW5U7BoJOM6g-Xd8LZRe7wAAElikVZFN-CKllr_MSmbTFm-LJ-l6mWoAx1oXRDtR7PZ"/>
+</div>
+<h3 class="serif text-2xl text-primary mb-3 dish-text">El Cacao Dorado</h3>
+<p class="text-on-surface-variant font-light text-sm leading-relaxed dish-text">Esfera de chocolate amargo 72% de origen único, corazón líquido de caramelo salado y un toque de sal del Himalaya infundida en oro.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- La Cava -->
+<section id="bodega" class="relative py-48 w-full overflow-hidden">
+<div class="absolute inset-0">
+<img class="bodega-bg w-full h-full object-cover opacity-40" data-alt="cava de vinos tenue con estantes de roble" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuul3ZB0TyZ8SZ7anoPMx63zzCxcQ-S4yJkCwgdRYMKd1oPdIA8PSr78lF1AJbIWiVQrAySE5QAjCrx4be5h1I6vwrUZ4EGliVffZ3xFxGJYupDDu75PHm82XiLP3IC7c1lIokvTNTQZap1eb7Eqb2Mfn7khBm_5OTs6WwUfXCy_vKQENQDzUfTg45zyVXVjtLpQQpeooFELv05dr7qTfWKMsChQZqpGQcbtmfSCBIW9dWffoOL47gW0xsWmQOh0IJvxyYxcx97DaR"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2">
+<div>
+<span class="bodega-label font-label text-xs tracking-[0.3em] uppercase text-primary block mb-6">El Santuario del Sommelier</span>
+<h2 class="bodega-titulo serif text-5xl md:text-6xl mb-8 leading-tight text-on-surface">La Cava</h2>
+<p class="bodega-desc text-on-surface-variant text-lg leading-relaxed font-light mb-10 max-w-md">
+                    Nuestra bóveda subterránea alberga más de doce mil botellas, una odisea curada que abarca desde los Grand Crus de Burdeos hasta los viñedos boutique ocultos del Loira. Nuestro Sommelier principal le invita a descubrir maridajes que dan vida a cada añada.
+                </p>
+<div class="flex items-center gap-4">
+<button class="bodega-btn border border-primary text-primary px-8 py-3 font-label text-xs tracking-widest uppercase hover:bg-primary hover:text-on-primary transition-all duration-500">
+                        Ver Carta de Vinos
+                    </button>
+<span class="bodega-vintage text-outline-variant font-serif italic text-sm">Vinos de Propiedad desde 1924</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Reserva CTA -->
+<section id="reservar" class="py-32 bg-surface-container-highest">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="mb-12">
+<span class="cta-icono material-symbols-outlined text-5xl text-primary mb-6 block" data-weight="fill">calendar_month</span>
+<h2 class="cta-titulo serif text-4xl md:text-5xl mb-6">Reserve su Mesa</h2>
+<p class="cta-desc text-on-surface-variant font-light text-lg mb-10">Le invitamos a vivir el pináculo de la gastronomía en NEVORA. Para grupos de seis o más personas, por favor contacte directamente con nuestro conserje.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<div class="cta-caja p-8 bg-surface-container-low flex flex-col items-center">
+<span class="font-label text-xs text-primary uppercase tracking-widest mb-2">Servicio de Cena</span>
+<p class="serif text-xl">18:30 — 23:00</p>
+<p class="text-on-surface-variant text-xs mt-2 italic">Cerrado los lunes</p>
+</div>
+<div class="cta-caja p-8 bg-surface-container-low flex flex-col items-center">
+<span class="font-label text-xs text-primary uppercase tracking-widest mb-2">Detalles de Contacto</span>
+<p class="serif text-xl">+34 912 345 678</p>
+<p class="text-on-surface-variant text-xs mt-2 italic">restaurante@hotel-aurelyn.com</p>
+</div>
+</div>
+<button class="cta-btn bg-primary text-on-primary px-16 py-5 font-label text-sm tracking-[0.2em] uppercase hover:bg-primary-fixed-dim transition-all duration-500 shadow-2xl">
+                Reservar una Experiencia
+            </button>
+</div>
+</section>
+
+  <!-- Pie de Página -->
+  <footer class="pie-pagina">
+    <div class="pie-grilla contenedor">
+
+      <div class="pie-marca">
+        <div class="pie-logo">NEVORA</div>
+        <p class="pie-lema">
+          La intersección de la grandeza histórica y el diseño editorial moderno.
+        </p>
+      </div>
+
+      <div class="pie-col-nav">
+        <h4 class="pie-nav-titulo">Experiencia</h4>
+        <div class="pie-enlaces">
+          <a class="pie-enlace" href="../index.html#habitaciones">Suites</a>
+          <a class="pie-enlace" href="#">Gastronomía</a>
+          <a class="pie-enlace" href="#">Eventos</a>
+        </div>
+      </div>
+
+      <div class="pie-col-nav">
+        <h4 class="pie-nav-titulo">Empresa</h4>
+        <div class="pie-enlaces">
+          <a class="pie-enlace" href="#">Política de Privacidad</a>
+          <a class="pie-enlace" href="#">Términos de Servicio</a>
+          <a class="pie-enlace" href="#">Prensa</a>
+          <a class="pie-enlace" href="#">Empleos</a>
+        </div>
+      </div>
+
+      <div class="pie-col-nav">
+        <h4 class="pie-nav-titulo">Ubicación</h4>
+        <p class="pie-direccion">
+          Barrio Los Ángeles, Heredia Centro<br />
+          Heredia, Costa Rica 40101
+        </p>
+      </div>
+
+    </div>
+
+    <div class="pie-inferior contenedor">
+      <p class="pie-derechos">© 2024 NEVORA. Todos los derechos reservados.</p>
+      <div class="pie-redes">
+        <span class="material-symbols-outlined pie-icono-red">public</span>
+        <span class="material-symbols-outlined pie-icono-red">language</span>
+        <span class="material-symbols-outlined pie-icono-red">share</span>
+      </div>
+    </div>
+  </footer>
+
+<!-- Importación GSAP y script de animaciones custom modulares -->
+<script src="../../skills/gsap.min.js"></script>
+<script src="../../skills/ScrollTrigger.min.js"></script>
+<script src="../js/restaurante.js"></script>
+
+</body>
+</html>

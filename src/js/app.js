@@ -5,7 +5,7 @@ import { Reserva } from './Booking.js';
 
 // --- Instancias de prueba ---
 
-const hotel = new Hotel('Hotel Aurélyn', 'Barrio Los Ángeles, Heredia Centro, Costa Rica');
+const hotel = new Hotel('NEVORA', 'Barrio Los Ángeles, Heredia Centro, Costa Rica');
 
 const hab101 = new Habitacion(101, 'Santuario Estándar', 450);
 const hab202 = new Habitacion(202, 'Suite Deluxe', 750);

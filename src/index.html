@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel Aurélyn | Donde el Lujo Se Encuentra con la Serenidad</title>
+  <title>NEVORA | Donde el Lujo Se Encuentra con la Serenidad</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -16,26 +16,48 @@
 
   <!-- Barra de Navegación Superior -->
   <nav class="nav-sitio">
-    <div class="nav-marca">AURÉLYN</div>
+    <a href="index.html" class="nav-marca">NEVORA</a>
+    
     <div class="nav-menu">
-      <a class="nav-enlace nav-enlace--activo" href="#">Habitaciones</a>
-      <a class="nav-enlace" href="#">Restaurante</a>
-      <a class="nav-enlace" href="#">Bienestar</a>
-      <a class="nav-enlace" href="#">Nosotros</a>
+      <a class="nav-enlace nav-enlace--activo" href="#habitaciones">Habitaciones</a>
+      <a class="nav-enlace" href="pages/restaurante.html">Restaurante</a>
+      <a class="nav-enlace" href="#">Eventos</a>
+      <a class="nav-enlace" href="#nosotros">Nosotros</a>
+      
+      <!-- Selector de Destinos (Dropdown) -->
+      <div class="destinos-contenedor">
+        <button class="destinos-btn">
+          Nuestros Destinos
+          <span class="material-symbols-outlined icono-expandir">expand_more</span>
+        </button>
+        <div class="destinos-desplegable">
+          <a href="#">Costa Rica</a>
+          <a href="#">Canadá</a>
+          <a href="#">Estados Unidos</a>
+          <a href="#">Chile</a>
+          <a href="#">Suiza</a>
+        </div>
+      </div>
     </div>
-    <button class="btn-reservar">Reservar Ahora</button>
+
+    <button class="btn-reservar">RESERVAR AHORA</button>
   </nav>
 
   <!-- Sección Hero -->
   <header class="hero">
     <div class="hero-overlay"></div>
-    <img
+    <video
       class="hero-bg-imagen"
-      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVNN0WhueGTYwaHlpHgoKwDdADi6oSIihd6L-9FSC50i4wbJ2XHMMpd5V8YB44S6-ujeTIT70FnhjVMON4HiOFPQrQuF0bupQLmkV36YPr2JttHqYyOrThl05NylcroRmF2Et1EtPW8JKdos9OIOkWtF8NM50p9qxC8trztCM5QP-BSNBQ_-0r1u-GXpzLdpcuLFMfiEhPuYSTvaQ8RlxRsfhvlVyQgDRlWlX9jqCbhcAzLWNj7BeAYirvOU-tvJUSawp3fItazuN6"
-      alt="Exterior del Hotel Aurélyn"
-    />
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src="video/YTDown.com_YouTube_Video-corporativo-para-hoteles-y-turismo_Media_NeOLLAOLNEQ_001_1080p.mp4" type="video/mp4" />
+    </video>
     <div class="hero-contenido">
-      <div class="hero-titulo">AURÉLYN</div>
+      <div class="hero-titulo">NEVORA</div>
       <p class="hero-lema">Donde el lujo se encuentra con la serenidad</p>
       <div class="hero-divisor-wrap">
         <div class="hero-divisor"></div>
@@ -44,6 +66,7 @@
     <div class="indicador-scroll">
       <span class="etiqueta-scroll">Descubrir</span>
       <div class="linea-scroll"></div>
+      <span class="material-symbols-outlined icono-flecha">keyboard_arrow_down</span>
     </div>
   </header>
 
@@ -129,13 +152,13 @@
       <img
         class="restaurante-fondo-imagen"
         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB0HxtWOS1KBL3gusFcIAO4SNnRuS3ACh4luK3byMSjSlWD1poOo1pVJm6pCqpXM0RwN1AVB3zsnTib2mXvRMTL4r8Ij0IlXd3r83uMMiJSjEwVX2HHFNWzdH5AOtHR-3jOINn5-tPlw8tu3gQEqpNoWkPkSHscI8iwbcdj4i2Ex1zB7e74ZMtCM0Q25X37aoKMdgL8zP1_HWhkNgqa49fTu6r1qjBXiU02jzl3WH2wbxNPZD3HGI7f5I0XWJd7lxfkwicIFNMMtrR"
-        alt="La Mesa Aurélyn"
+        alt="La Mesa NEVORA"
       />
       <div class="restaurante-fondo-overlay"></div>
     </div>
     <div class="restaurante-contenido contenedor">
       <span class="etiqueta-seccion">Arte Culinario</span>
-      <h2 class="restaurante-titulo">La Mesa Aurélyn</h2>
+      <h2 class="restaurante-titulo">La Mesa NEVORA</h2>
       <p class="restaurante-descripcion">
         Una sinfonía de sabores de temporada elaborada por chefs galardonados con la estrella Michelin, servida en una atmósfera de elegancia susurrada y gracia atemporal.
       </p>
@@ -153,7 +176,7 @@
           <img
             class="nosotros-imagen"
             src="img/hotelimage.webp"
-            alt="Historia del Hotel"
+            alt="Historia del NEVORA"
           />
         </div>
         <div class="nosotros-año">1892</div>
@@ -164,7 +187,7 @@
         <h2 class="nosotros-titulo">Un Siglo de Distinción Silenciosa</h2>
         <div class="nosotros-parrafos">
           <p>
-            Fundado a finales del siglo XIX en las verdes colinas de Heredia, Costa Rica, el Hotel Aurélyn nació como una hacienda privada para la élite centroamericana. Con el paso de las décadas, se transformó en un santuario donde la historia se une con la vanguardia moderna.
+            Fundado a finales del siglo XIX en las verdes colinas de Heredia, Costa Rica, el NEVORA nació como una hacienda privada para la élite centroamericana. Con el paso de las décadas, se transformó en un santuario donde la historia se une con la vanguardia moderna.
           </p>
           <p>
             Creemos que el verdadero lujo no se encuentra en las declaraciones más ruidosas, sino en los detalles más cuidados: el peso del lino, el silencio de los corredores y la gracia intuitiva de nuestro servicio.
@@ -184,7 +207,7 @@
     <div class="pie-grilla contenedor">
 
       <div class="pie-marca">
-        <div class="pie-logo">AURÉLYN</div>
+        <div class="pie-logo">NEVORA</div>
         <p class="pie-lema">
           La intersección de la grandeza histórica y el diseño editorial moderno.
         </p>
@@ -194,7 +217,7 @@
         <h4 class="pie-nav-titulo">Experiencia</h4>
         <div class="pie-enlaces">
           <a class="pie-enlace" href="#">Suites</a>
-          <a class="pie-enlace" href="#">Gastronomía</a>
+          <a class="pie-enlace" href="pages/restaurante.html">Gastronomía</a>
           <a class="pie-enlace" href="#">El Spa</a>
         </div>
       </div>
@@ -220,7 +243,7 @@
     </div>
 
     <div class="pie-inferior contenedor">
-      <p class="pie-derechos">© 2024 Hotel Aurélyn. Todos los derechos reservados.</p>
+      <p class="pie-derechos">© 2024 NEVORA. Todos los derechos reservados.</p>
       <div class="pie-redes">
         <span class="material-symbols-outlined pie-icono-red">public</span>
         <span class="material-symbols-outlined pie-icono-red">language</span>
